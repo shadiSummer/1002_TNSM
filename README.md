@@ -7,19 +7,14 @@ This Java program demonstrates the use of a genetic algorithm to solve a path se
 
 ## Problem Description
 
-The problem involves optimizing a population of chromosomes, each consisting of three genes. The values of the genes are read from a text file called `gene.txt`, which contains 250 lines. Each line represents a gene and consists of three numbers: gene value, bandwidth, and delay.
+This project implements a genetic algorithm (GA) designed for selecting optimal network paths for Multi-Path TCP (MPTCP) clients. It uses various genetic operations like crossover, mutation, and selection to evolve a population of chromosomes, each representing a potential solution for path selection based on network characteristics like bandwidth and delay.
 
-The fitness of each chromosome is calculated using the formula: `0.6 * a + 0.4 * b`, where `a` is the total sum of the bandwidth of the three genes in the chromosome, and `b` is the difference between the delays of the genes.
+## Features
+- Custom genetic algorithm implementation.
+- Tournament selection strategy.
+- Two-way crossover and mutation operations.
+- Fitness calculation based on bandwidth and delay metrics using the formula: `0.6 * a + 0.4 * b`, where `a` is the total sum of the bandwidth of the three genes in the chromosome, and `b` is the difference between the delays of the genes.
 
-## Implementation Details
-
-The program uses a genetic algorithm approach with the following components:
-
-- **Chromosome**: Represents an individual chromosome with three genes. It includes methods for calculating fitness, crossover, and mutation.
-
-- **Population**: Represents a population of chromosomes. It includes methods for evaluating the population, performing tournament selection, and evolving to the next generation.
-
-- **Main**: The main class that initializes and evolves the population over a specified number of generations. It also reads the gene values from the text file and displays the fittest chromosome and its corresponding gene in the last population.
 
 ## Implementation
 
@@ -40,12 +35,14 @@ https://www.eclipse.org/downloads/
 5- Install SDN Controller (I have used Floodlight but for easier implementation, you might prefer ONOS)
 https://floodlight.atlassian.net/wiki/spaces/floodlightcontroller/overview?homepageId=1343545
 
+6- Java Development Kit (JDK), version 8 or later
+
 
 ## Usage
 
 1. Ensure you have Java installed on your machine.
 
-2. Place the `gene_values.txt` file in the same directory as the Java source files.
+2. Place the `genes.txt` file in the same directory as the Java source files.
 
 3. Compile the Java source files using the following command:
 
@@ -60,9 +57,15 @@ java Main
 
 6. The program will display the progress of each generation, including the fitness values of the chromosomes and their gene values. Finally, it will output the fittest chromosome in the last population and its corresponding gene.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
+## Customization
+You can modify various parameters of the genetic algorithm, such as the number of generations, population size, mutation rate, etc., in the respective Java classes.
+
+## Authors
+Shadi Bikas
+
+
+
 
 Feel free to modify and adapt the code to suit your needs.
 
