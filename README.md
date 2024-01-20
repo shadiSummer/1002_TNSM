@@ -7,7 +7,7 @@ This Java program demonstrates the use of a genetic algorithm to solve a path se
 
 ## Problem Description
 
-The problem involves optimizing a population of chromosomes, where each chromosome consists of three genes. The values of the genes are read from a text file called `gene_values.txt`, which contains 250 lines. Each line represents a gene and consists of three numbers: gene value, bandwidth, and delay.
+The problem involves optimizing a population of chromosomes, each consisting of three genes. The values of the genes are read from a text file called `gene.txt`, which contains 250 lines. Each line represents a gene and consists of three numbers: gene value, bandwidth, and delay.
 
 The fitness of each chromosome is calculated using the formula: `0.6 * a + 0.4 * b`, where `a` is the total sum of the bandwidth of the three genes in the chromosome, and `b` is the difference between the delays of the genes.
 
@@ -31,6 +31,8 @@ https://github.com/Dash-Industry-Forum/dash.js
 
 3- Download the video files with the preferred bitrate:
 https://ftp.itec.aau.at/datasets/DASHDataset2014/
+
+4- I have developed a software called "Exelizer" to read the log file from the Google Chromium which the Dash Client runs on, and calculate the QoE parameters. Use it to print out a text file including the average received video bitrate, number of quality switched and duration of underrun. 
 
 4- Install Eclipse Java EE:
 https://www.eclipse.org/downloads/
