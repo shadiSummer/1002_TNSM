@@ -86,11 +86,14 @@ class PopulationUtils {
             currentGenes.add(gene);
         }
 
+        // Get the maximum path ID based on the size of pathInfoMap
+        int maxPathID = pathInfoMap.size();
+
         for (int i = 0; i < chromosome.genes.length; i++) {
             if (Math.random() < GeneticAlgorithm.getMutationRate()) {
                 int newGene;
                 do {
-                    newGene = rand.nextInt(250) + 1; 
+                    newGene = rand.nextInt(maxPathID) + 1; // Use maxPathID instead of a hardcoded value
                 } while (currentGenes.contains(newGene));
                 currentGenes.remove(chromosome.genes[i]);
                 chromosome.genes[i] = newGene;
@@ -98,26 +101,23 @@ class PopulationUtils {
             }
         }
 
-        
+        // Recalculate bandwidth sum and delay difference
         double totalBandwidth = 0.0;
         double maxDelay = Double.MIN_VALUE;
         double minDelay = Double.MAX_VALUE;
         for (int gene : chromosome.genes) {
             PathInfo info = pathInfoMap.get(gene);
-            totalBandwidth += info.getBandwidth();
-            maxDelay = Math.max(maxDelay, info.getDelay());
-            minDelay = Math.min(minDelay, info.getDelay());
+            if (info != null) { // Add null check for safety
+                totalBandwidth += info.getBandwidth();
+                maxDelay = Math.max(maxDelay, info.getDelay());
+                minDelay = Math.min(minDelay, info.getDelay());
+            }
         }
         chromosome.bandwidthSum = totalBandwidth;
         chromosome.delayDifference = maxDelay - minDelay;
 
         chromosome.recalculateFitness();
-        /*
-        System.err.println("Chromosome Path IDs: " + Arrays.toString(chromosome.genes));
-        System.err.println("Bandwidth Sum: " + chromosome.bandwidthSum);
-        System.err.println("Max Delay: " + maxDelay);
-        System.err.println("Min Delay: " + minDelay);
-        System.err.println("Delay Difference: " + chromosome.delayDifference);*/
     }
+
    
 }
