@@ -52,7 +52,9 @@ The controller can be run on the Eclipse to perform path assignment.
 
 4. Run the Genetic Algorithm. Follow the prompts to specify the program parameters such as population size, tournament size, mutation rate, and number of generations based on your preference.
 
-6. The program will display the progress of each generation. Finally, it will output the fittest chromosome in the last population and its corresponding gene.
+5. The program will display the progress of each generation. Finally, it will output the fittest chromosome in the last population and its corresponding gene.
+
+6. Once the genetic algorithm selects the optimal path, assign the path using the Floodlight controller and run the client to stream the video using the topology files. In the Topology_File, you can access the designed MPTCP video client python files. In Mininet, run the topology to stream the video using the "sudo python main.py" command in the terminal.
 
 
 ## Customization
