@@ -38,7 +38,7 @@ I have used the BigBuckBunny video presentation. However, a different video and 
 8- Install SDN Controller (I have used Floodlight but for easier implementation, you might prefer other controllers)
     i- I have modified the Floodlight Controller in order to assign the paths received from the genetic algorithm to the clients. Since the size of the controller package           exceeds the limit, you can access the modified version through this link: 
     ii- The controller can be run on Eclipse to perform path assignment. 
-    iii- You can access the Floodlight Controller implementation and tutorials through this link: https://floodlight.atlassian.net/wiki/spaces/floodlightcontroller/overview?       homepageId=1343545
+    iii- You can access the Floodlight Controller implementation and tutorials through this link: https://floodlight.atlassian.net/wiki/spaces/floodlightcontroller/overview?homepageId=1343545
     iv- Run the controller on Eclipse
 
 9- Install Mininet: https://mininet.org/
