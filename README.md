@@ -20,28 +20,30 @@ This project implements a genetic algorithm (GA) designed for selecting optimal 
 
 1- Make sure you have the MPTCP transport protocol implemented in the Linux Kernel. In case you don't have MPTCP installed, you can get the proper package and follow the steps to install it from this link: https://multipath-tcp.org/pmwiki.php/Users/HowToInstallMPTCP?
 
-2- Install Apache2:
+2- Install Apache2. This will create a folder called "HTML" which can be accessed through "/var/www/html"
 https://httpd.apache.org/
 
-3- Download the Dash client. The dash client is the modified version of the Industry Dash video client presented at "https://github.com/Dash-Industry-Forum/dash.js" which was modified to print the specific information regarding the streamed video in a Chrome log file. The modification can be seen at "/dash.js/samples/dash-if-reference-player/app/main.js". Move the directory of the client  to the Apache server folder (/var/www/html) and install the video client using the tutorial of the industry dash forum "https://github.com/Dash-Industry-Forum/dash.js"
+3- Download the Dash.js. The dash.js is the modified version of the Industry Dash video client presented at "https://github.com/Dash-Industry-Forum/dash.js" which was modified to print out the specific information regarding the streamed video in a Chrome log file. The modification can be seen at "/dash.js/samples/dash-if-reference-player/app/main.js". Move the directory of the dash.js to the Apache server folder (/var/www/html) and implement it using the tutorial of the industry dash forum "https://github.com/Dash-Industry-Forum/dash.js"
 
 4- Download the video files with the preferred bitrate:
 https://ftp.itec.aau.at/datasets/DASHDataset2014/
-I have used the BigBuckBunny video presentation. However, a different video and presentation can be preferred. 
+I have used the BigBuckBunny video presentation. However, a different video and presentation can be preferred. Move the video files and the MPD file to "/var/www/html"
 
-5- I have developed a software called "Exelizer" to read the log file from the Google Chromium browser which the Dash Client runs on, and calculate the QoE parameters. Use it to print out a text file including the average received video bitrate, the number of quality switches, and the duration of the underrun. 
+5- I have developed a software called "Exelizer" to read the log file from the Google Chromium browser which the Dash.js runs on, and calculate the QoE parameters. Use it to print out a text file including the average received video bitrate, the number of quality switches, and the duration of the underrun. 
 
 6- Install Java Development Kit (JDK), version 8 or later
 
-7- Install Eclipse Java EE: 
-https://www.eclipse.org/downloads/
+7- Install Eclipse Java EE: https://www.eclipse.org/downloads/
 
 8- Install SDN Controller (I have used Floodlight but for easier implementation, you might prefer other controllers)
     i- I have modified the Floodlight Controller in order to assign the paths received from the genetic algorithm to the clients. Since the size of the controller package           exceeds the limit, you can access the modified version through this link: 
     ii- The controller can be run on Eclipse to perform path assignment. 
     iii- You can access the Floodlight Controller implementation and tutorials through this link: https://floodlight.atlassian.net/wiki/spaces/floodlightcontroller/overview?       homepageId=1343545
+    iv- Run the controller on Eclipse
 
+9- Install Mininet: https://mininet.org/
 
+10- Download the topology files and move them to "/var/www/html". 
 
 
 
