@@ -62,6 +62,10 @@ IV.	Run the controller on Eclipse
 ## Customization
 You can modify various parameters of the genetic algorithm, such as the number of generations, population size, mutation rate, etc., in the respective Java classes.
 
+The code and the documentation are published on Zenodo and can be accessed through the link below:
+https://zenodo.org/records/11205757
+
+
 ## Authors
 Shadi Bikas
 
